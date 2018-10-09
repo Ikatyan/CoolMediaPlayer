@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorTopMenuButtonsText">@android:color/white</color>
+    <color name="colorTopMenuBackGround">#6458a600</color>
+    <color name="colorTopMenuButtonsSeparator">#809667</color>
 </resources>
