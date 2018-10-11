@@ -7,18 +7,18 @@
     tools:context=".fragment.TopMenuFragment">
 
     <ImageView
+        android:id="@+id/image_view_main_menu_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/splatoon_wallpaper" />
+        android:src="@drawable/main_menu_background" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/colorTopMenuBackGround">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/linearLayout_media_player"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,140 +28,155 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_weight="1">
 
-            <ImageView
+            <com.google.android.exoplayer2.ui.PlayerView
                 android:id="@+id/playerView"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:src="@drawable/exo_edit_mode_logo"
-                android:background="@android:color/black" />
+                android:layout_height="330dp"
+                android:background="@drawable/splatoon_wallpaper" />
+
+            <com.google.android.exoplayer2.ui.PlayerControlView
+                android:id="@+id/playerControlView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/playerView" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_view_all_music"
+                style="@style/TopMenuButtonImageView"
+                android:src="@drawable/ic_library_music_black_24dp"
+                app:layout_constraintBottom_toTopOf="@+id/view3"
+                app:layout_constraintEnd_toStartOf="@id/text_view_all_music"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view" />
 
             <TextView
-                android:id="@+id/playerControlView2"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="ここはあれが入るよ" />
+                android:id="@+id/text_view_all_music"
+                style="@style/TopMenuButtonTextView"
+                android:text="@string/all_music_label"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_all_music"
+                app:layout_constraintEnd_toStartOf="@+id/view4"
+                app:layout_constraintStart_toEndOf="@+id/image_view_all_music"
+                app:layout_constraintTop_toTopOf="@+id/image_view_all_music" />
 
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/image_view_favorite"
+                style="@style/TopMenuButtonImageView"
+                android:src="@drawable/ic_favorite_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/view3"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_favorite"
+                app:layout_constraintStart_toStartOf="@+id/view3"
+                app:layout_constraintTop_toTopOf="@+id/view3" />
 
+            <TextView
+                android:id="@+id/text_view_favorite"
+                style="@style/TopMenuButtonTextView"
+                android:text="@string/favorite_label"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_favorite"
+                app:layout_constraintEnd_toStartOf="@+id/view4"
+                app:layout_constraintStart_toEndOf="@+id/image_view_favorite"
+                app:layout_constraintTop_toTopOf="@+id/image_view_favorite" />
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="2"
-            android:padding="-1dp"
-            android:rowCount="2">
+            <ImageView
+                android:id="@+id/image_view_playlist"
+                style="@style/TopMenuButtonImageView"
+                android:src="@drawable/ic_playlist_play_black_24dp"
+                app:layout_constraintBottom_toTopOf="@+id/view4"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_playlist"
+                app:layout_constraintStart_toStartOf="@+id/view2"
+                app:layout_constraintTop_toTopOf="@+id/view2" />
 
-            <android.support.constraint.ConstraintLayout
-                style="@style/TopMenuButtonConstraintLayout"
-                android:layout_column="0"
-                android:layout_row="0">
+            <TextView
+                android:id="@+id/text_view_playlist"
+                style="@style/TopMenuButtonTextView"
+                android:text="@string/playlist_label"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_playlist"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_view_playlist"
+                app:layout_constraintTop_toTopOf="@+id/image_view_playlist" />
 
-                <ImageView
-                    android:id="@+id/image_view_all_music"
-                    android:src="@drawable/ic_library_music_black_24dp"
-                    style="@style/TopMenuButtonImageView"
-                    app:layout_constraintEnd_toStartOf="@+id/text_view_all_music" />
+            <ImageView
+                android:id="@+id/image_view_recent"
+                style="@style/TopMenuButtonImageView"
+                android:src="@drawable/ic_history_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/view4"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_recent"
+                app:layout_constraintStart_toStartOf="@+id/view4"
+                app:layout_constraintTop_toTopOf="@+id/view4" />
 
-                <TextView
-                    android:id="@+id/text_view_all_music"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="すべての曲"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorTopMenuButtonsText"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/image_view_all_music"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/text_view_recent"
+                style="@style/TopMenuButtonTextView"
+                android:text="@string/recent_label"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_recent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_view_recent"
+                app:layout_constraintTop_toTopOf="@+id/image_view_recent" />
 
-            </android.support.constraint.ConstraintLayout>
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView6"
+                app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <android.support.constraint.ConstraintLayout
-                style="@style/TopMenuButtonConstraintLayout"
-                android:layout_column="1"
-                android:layout_row="0">
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView6"
+                app:layout_constraintStart_toEndOf="@id/imageView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/image_view_favorite"
-                    style="@style/TopMenuButtonImageView"
-                    android:src="@drawable/ic_favorite_black_24dp"
-                    app:layout_constraintEnd_toStartOf="@+id/text_view_favorite" />
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imageView5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView6" />
 
-                <TextView
-                    android:id="@+id/text_view_favorite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="お気に入り"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorTopMenuButtonsText"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/image_view_favorite"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            <View
+                android:id="@+id/view4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageView5"
+                app:layout_constraintTop_toBottomOf="@id/imageView6" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_column="0"
-                android:layout_row="1"
-                style="@style/TopMenuButtonConstraintLayout">
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="1px"
+                android:layout_height="0dp"
+                android:background="@color/colorTopMenuButtonsSeparator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-                <ImageView
-                    android:id="@+id/image_view_playlist"
-                    style="@style/TopMenuButtonImageView"
-                    android:src="@drawable/ic_playlist_play_black_24dp"
-                    app:layout_constraintEnd_toStartOf="@+id/text_view_playlist" />
-
-                <TextView
-                    android:id="@+id/text_view_playlist"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Playリスト"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorTopMenuButtonsText"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/image_view_playlist"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_column="1"
-                android:layout_row="1"
-                style="@style/TopMenuButtonConstraintLayout">
-
-                <ImageView
-                    android:id="@+id/image_view_recent"
-                    style="@style/TopMenuButtonImageView"
-                    android:src="@drawable/ic_history_black_24dp"
-                    app:layout_constraintEnd_toStartOf="@+id/text_view_recent" />
-
-                <TextView
-                    android:id="@+id/text_view_recent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="最近"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorTopMenuButtonsText"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/image_view_recent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </android.support.constraint.ConstraintLayout>
-        </GridLayout>
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:background="@color/colorTopMenuButtonsSeparator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
 

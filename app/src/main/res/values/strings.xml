@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_music_label">すべての曲</string>
+    <string name="favorite_label">お気に入り</string>
+    <string name="playlist_label">Playリスト</string>
+    <string name="recent_label">最近</string>
 </resources>

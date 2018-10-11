@@ -14,23 +14,24 @@
         <item name="android:layout_columnWeight">1</item>
         <item name="android:layout_rowWeight">1</item>
         <item name="android:layout_gravity">fill</item>
-        <item name="android:background">@drawable/menu_separator</item>
     </style>
 
     <style name="TopMenuButtonImageView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">0dp</item>
-        <item name="android:layout_marginStart">0dp</item>
-        <item name="android:layout_marginTop">0dp</item>
-        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
         <item name="layout_constraintHorizontal_chainStyle">packed</item>
-        <item name="layout_constraintStart_toStartOf">parent</item>
-        <item name="layout_constraintTop_toTopOf">parent</item>
     </style>
 
     <style name="TopMenuButtonTextView">
-        
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorTopMenuButtonsText</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

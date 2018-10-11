@@ -5,5 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorTopMenuButtonsText">@android:color/white</color>
     <color name="colorTopMenuBackGround">#6458a600</color>
-    <color name="colorTopMenuButtonsSeparator">#809667</color>
+    <color name="colorTopMenuButtonsSeparator">#eeeeee</color>
 </resources>
